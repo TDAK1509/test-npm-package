@@ -27,17 +27,14 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: "src/components/main.ts",
-      name: "myLibraryVueTs",
+      entry: "src/main.ts",
+      name: "bebitGlobalVueComponents",
       formats: ["es", "cjs", "umd"],
       fileName: format => `global-vue-components-ts.${format}.js`,
     },
     rollupOptions: {
-      // make sure to externalize deps that should not be bundled
-      // into your library
       input: {
-        main: resolve(__dirname, "src/components/main.ts"),
+        main: resolve(__dirname, "src/main.ts"),
       },
       external: ["vue"],
       output: {
