@@ -1,11 +1,4 @@
 import type { App } from "vue";
-import { HelloWorld, MyButton } from "@/components";
+import { HelloWorld, MyButton, MyText } from "@/components";
 
-export default {
-  install: (app: App) => {
-    app.component("HelloWorld", HelloWorld);
-    app.component("MyButton", MyButton);
-  },
-};
-
-export { HelloWorld, MyButton };
+export { HelloWorld, MyButton, MyText };
