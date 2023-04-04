@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TDAK1509/test-npm-package/issues"
   },
-  "homepage": "https://github.com/TDAK1509/test-npm-package#readme"
+  "homepage": "https://github.com/TDAK1509/test-npm-package#readme",
+  "publishConfig": {
+    "@tdak1509:registry": "https://npm.pkg.github.com"
+  }
 }
