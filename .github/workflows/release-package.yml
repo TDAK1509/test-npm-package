@@ -10,13 +10,15 @@ jobs:
     permissions:
       packages: write
       contents: read
+    env:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: yarn install
+      - run: yarn
       - run: yarn build
       - run: yarn publish
         env:
