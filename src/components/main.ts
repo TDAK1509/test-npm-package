@@ -1,12 +1,10 @@
-import { defineCustomElement } from "vue";
 import type { App } from "vue";
-import { MyButton, MyText } from "@/components";
+import { ToggleButton } from "@/components";
 
 export default {
   install: (app: App) => {
-    app.component("MyButton", MyButton);
-    app.component("MyText", defineCustomElement(MyText));
+    app.component("ToggleButton", ToggleButton);
   },
 };
 
-export { MyButton, MyText };
+export { ToggleButton };
