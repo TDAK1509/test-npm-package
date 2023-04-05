@@ -3,7 +3,7 @@
   "version": "1.0.12",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
@@ -33,16 +33,16 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/global-vue-components-ts.umd.js",
-  "module": "./dist/global-vue-components-ts.es.js",
+  "main": "./dist/usergram-ui-components-ts.umd.js",
+  "module": "./dist/usergram-ui-components-ts.es.js",
   "exports": {
     ".": {
-      "import": "./dist/global-vue-components-ts.es.js",
-      "require": "./dist/global-vue-components-ts.umd.js"
+      "import": "./dist/usergram-ui-components-ts.es.js",
+      "require": "./dist/usergram-ui-components-ts.umd.js"
     },
-    "./dist/global-vue-components-ts.css": {
-      "import": "./dist/global-vue-components-ts.css",
-      "require": "./dist/global-vue-components-ts.css"
+    "./dist/usergram-ui-components-ts.css": {
+      "import": "./dist/usergram-ui-components-ts.css",
+      "require": "./dist/usergram-ui-components-ts.css"
     }
   },
   "types": "./dist/main.d.ts"

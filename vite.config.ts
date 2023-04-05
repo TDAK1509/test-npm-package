@@ -12,7 +12,7 @@ export default defineConfig({
     }),
     typescript2({
       check: false,
-      include: ["src/components/**/*.vue"],
+      include: ["src/components/**/*.ts"],
       tsconfigOverride: {
         compilerOptions: {
           outDir: "dist",
@@ -27,20 +27,20 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     lib: {
-      entry: "src/main.ts",
-      name: "bebitGlobalVueComponents",
+      entry: "src/components/main.ts",
+      name: "UsergramUIComponents",
       formats: ["es", "cjs", "umd"],
-      fileName: format => `global-vue-components-ts.${format}.js`,
+      fileName: format => `usergram-ui-components-ts.${format}.js`,
     },
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/main.ts"),
+        main: resolve(__dirname, "src/components/main.ts"),
       },
       external: ["vue"],
       output: {
         assetFileNames: assetInfo => {
           if (assetInfo.name === "main.css")
-            return "global-vue-components-ts.css";
+            return "usergram-ui-components-ts.css";
           return assetInfo.name;
         },
         exports: "named",

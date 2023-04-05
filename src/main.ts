@@ -1,4 +1,5 @@
-import type { App } from "vue";
-import { HelloWorld, MyButton, MyText } from "@/components";
+import { createApp } from "vue";
+import App from "./App.vue";
+import MyLibrary from "./components/main";
 
-export { HelloWorld, MyButton, MyText };
+createApp(App).use(MyLibrary).mount("#app");
