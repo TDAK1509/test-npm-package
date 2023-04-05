@@ -1,11 +1,13 @@
-import { defineComponent, h, toRefs } from "vue";
+import { defineComponent, h, toRefs, isVue2 } from "vue-demi";
+
+const emits = isVue2 ? ["input"] : ["update:modelValue"];
 
 export const ToggleButton = defineComponent({
   name: "ToggleButton",
   props: {
     modelValue: Boolean,
   },
-  emits: ["update:modelValue"],
+  emits,
   setup(props, ctx) {
     const { modelValue } = toRefs(props);
 
@@ -15,7 +17,8 @@ export const ToggleButton = defineComponent({
           "button",
           {
             onClick: () => {
-              ctx.emit("update:modelValue", !modelValue.value);
+              const vModelEmitEvent = isVue2 ? "input" : "update:modelValue";
+              ctx.emit(vModelEmitEvent, !modelValue.value);
             },
           },
           "Toggle"
