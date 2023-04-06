@@ -1,18 +1,14 @@
 {
   "name": "@tdak1509/test-npm-package",
-  "version": "1.0.20",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "serve": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
-  "peerDependencies": {
-    "vue": "^2.7.14 || >=3.0.0"
-  },
   "dependencies": {
-    "vue": "^3.2.47",
-    "vue-demi": "^0.13.11"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
@@ -26,28 +22,5 @@
   "volta": {
     "node": "16.14.2",
     "yarn": "1.22.17"
-  },
-  "publishConfig": {
-    "@tdak1509:registry": "https://npm.pkg.github.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TDAK1509/test-npm-package.git"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/usergram-ui-components-ts.umd.js",
-  "module": "./dist/usergram-ui-components-ts.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/usergram-ui-components-ts.es.js",
-      "require": "./dist/usergram-ui-components-ts.umd.js"
-    },
-    "./dist/usergram-ui-components-ts.css": {
-      "import": "./dist/usergram-ui-components-ts.css",
-      "require": "./dist/usergram-ui-components-ts.css"
-    }
-  },
-  "types": "./dist/main.d.ts"
+  }
 }
