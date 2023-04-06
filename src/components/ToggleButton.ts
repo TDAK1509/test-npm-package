@@ -19,30 +19,16 @@ export const ToggleButton = defineComponent({
       ctx.emit("update:modelValue", !modelValue.value);
     }
 
-    if (isVue2) {
-      return () =>
-        h(
-          "div",
-          {
-            class: "toggle-button",
-          },
-          [
-            h("button", { on: { click: onClickVue2 } }, "Toggle"),
-            h("p", `Selected: ${modelValue.value}`),
-          ]
-        );
-    }
-
     return () =>
-      h("div", { class: "toggle-button" }, [
-        h(
-          "button",
-          {
-            onClick: onClickVue3,
-          },
-          "Toggle"
-        ),
-        h("p", `Selected: ${modelValue.value}`),
-      ]);
+      h(
+        "div",
+        {
+          class: "toggle-button",
+        },
+        [
+          h("button", { on: { click: onClickVue2 } }, "Toggle"),
+          h("p", `Selected: ${modelValue.value}`),
+        ]
+      );
   },
 });
