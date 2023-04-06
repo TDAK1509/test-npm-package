@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "serve": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "gulp",
     "preview": "vite preview"
   },
   "dependencies": {
