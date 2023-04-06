@@ -36,7 +36,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/components/main.ts"),
       },
-      external: ["vue"],
+      external: ["vue", "vue-demi"],
       output: {
         assetFileNames: assetInfo => {
           if (assetInfo.name === "main.css")
@@ -46,6 +46,7 @@ export default defineConfig({
         exports: "named",
         globals: {
           vue: "Vue",
+          "vue-demi": "vueDemi",
         },
       },
     },
@@ -54,5 +55,8 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
     },
+  },
+  optimizeDeps: {
+    exclude: ["vue-demi"],
   },
 });
