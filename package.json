@@ -1,6 +1,6 @@
 {
   "name": "@tdak1509/test-npm-package",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "type": "module",
   "scripts": {
     "serve": "vite",

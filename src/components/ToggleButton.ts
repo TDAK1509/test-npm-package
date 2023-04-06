@@ -11,42 +11,38 @@ export const ToggleButton = defineComponent({
   setup(props, ctx) {
     const { modelValue } = toRefs(props);
 
+    function onClickVue2() {
+      ctx.emit("input", !modelValue.value);
+    }
+
+    function onClickVue3() {
+      ctx.emit("update:modelValue", !modelValue.value);
+    }
+
+    if (isVue2) {
+      return () =>
+        h(
+          "div",
+          {
+            class: "toggle-button",
+          },
+          [
+            h("button", { on: { click: onClickVue2 } }, "Toggle"),
+            h("p", `Selected: ${modelValue.value}`),
+          ]
+        );
+    }
+
     return () =>
-      h("div", {}, [
+      h("div", { class: "toggle-button" }, [
         h(
           "button",
-          isVue2
-            ? () =>
-                onClickVue2(() => {
-                  const vModelEmitEvent = isVue2
-                    ? "input"
-                    : "update:modelValue";
-                  ctx.emit(vModelEmitEvent, !modelValue.value);
-                })
-            : () =>
-                onClickVue3(() => {
-                  const vModelEmitEvent = isVue2
-                    ? "input"
-                    : "update:modelValue";
-                  ctx.emit(vModelEmitEvent, !modelValue.value);
-                }),
+          {
+            onClick: onClickVue3,
+          },
           "Toggle"
         ),
         h("p", `Selected: ${modelValue.value}`),
       ]);
   },
 });
-
-function onClickVue2(callback: Function) {
-  return {
-    on: {
-      click: () => callback(),
-    },
-  };
-}
-
-function onClickVue3(callback: Function) {
-  return {
-    onClick: () => callback(),
-  };
-}
