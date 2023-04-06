@@ -1,6 +1,14 @@
-function defaultTask(cb) {
-  // place code for your default task here
+const { src, dest, series } = require("gulp");
+const del = require("del");
+
+async function removeDist(cb) {
+  await del(["dist"]);
   cb();
 }
 
-exports.default = defaultTask;
+function build(cb) {
+  src("src/components/*.vue").pipe(dest("dist"));
+  cb();
+}
+
+exports.default = series(removeDist, build);
